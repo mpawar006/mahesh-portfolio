@@ -1,100 +1,141 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahesh Pawar | Cloud Architect</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahesh Pawar - Cloud DevOps Portfolio</title>
+  <style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #e0f7fa);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #0d47a1;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+section {
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 1000px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+h2 {
+  color: #0d47a1;
+  border-bottom: 2px solid #82b1ff;
+  padding-bottom: 0.5rem;
+}
+.project a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0288d1;
+  text-decoration: none;
+  font-weight: bold;
+}
+.project a:hover {
+  text-decoration: underline;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+form button {
+  background-color: #0d47a1;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #1565c0;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: #eeeeee;
+  color: #555;
+}
+</style>
 </head>
 <body>
+  <header>
+    Mahesh Pawar - Cloud & DevOps Engineer
+  </header>
 
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="container">
-        <h1>Mahesh Pawar</h1>
-        <p class="subtitle">Cloud & DevOps Architect</p>
-        <a href="#projects" class="btn">View My Work</a>
-      </div>
-    </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Cloud & DevOps Engineer with expertise in automating cloud infrastructure, deploying scalable microservices, and implementing CI/CD pipelines using modern DevOps tools like GitHub, Jenkins, Docker, Kubernetes, and Terraform.</p>
   </section>
 
-  <nav class="navbar">
+  <section id="skills">
+    <h2>Skills</h2>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li>Cloud Platforms: AWS, Azure</li>
+      <li>CI/CD: Jenkins, GitHub Actions</li>
+      <li>Containers: Docker, Kubernetes</li>
+      <li>IaC & Config: Terraform, Ansible</li>
+      <li>Scripting: Bash, Python</li>
     </ul>
-  </nav>
-
-  <section class="section" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a passionate Cloud & DevOps Architect with expertise in designing and implementing scalable cloud-native solutions. I thrive on optimizing infrastructure and automating workflows to deliver highly available and secure deployments.</p>
-    </div>
   </section>
 
-  <section class="section" id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="skill-card">AWS</div>
-        <div class="skill-card">Terraform</div>
-        <div class="skill-card">Docker</div>
-        <div class="skill-card">Kubernetes</div>
-        <div class="skill-card">Jenkins</div>
-        <div class="skill-card">Linux</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">CI/CD</div>
-      </div>
-    </div>
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>Abode Software DevOps Lifecycle</h3>
+    <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
+    <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">GitHub Repo</a>
+  </div>
+
+  <div class="project">
+    <h3>Zendrix Corporation</h3>
+    <p>CI/CD pipeline using Jenkins, Docker, and Code Deploy for a microservices app, infrastructure created using terraform and configuration management using ansible.</p>
+    <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">GitHub Repo</a>
+  </div>
+
+  <div class="project">
+    <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
+    <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
+    <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">GitHub Repo</a>
+  </div>
+
+  <div class="project">
+    <h3>Multi-Region HA Architecture on AWS</h3>
+    <p>Designed and deployed a secure, scalable architecture using AWS services such as VPC, ALB, Auto Scaling Groups, and RDS with cross-region replication for high availability.</p>
+  </div>
+
+  <div class="project">
+    <h3>Production-Grade Kubernetes Cluster</h3>
+    <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/xjvnrgaw" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
-  <section class="section projects" id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-
-      <div class="project-card">
-        <img src="https://via.placeholder.com/800x400.png?text=AWS+Architecture+Diagram" alt="Project 1">
-        <div class="project-content">
-          <h3>Multi-Region HA Architecture on AWS</h3>
-          <p>Designed and deployed a secure, scalable architecture using AWS services such as VPC, ALB, Auto Scaling Groups, and RDS with cross-region replication for high availability.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://via.placeholder.com/800x400.png?text=CI%2FCD+Pipeline+Architecture" alt="Project 2">
-        <div class="project-content">
-          <h3>CI/CD Pipeline with Jenkins & Docker</h3>
-          <p>Implemented automated build and deployment pipeline using Jenkins, Docker, GitHub, and AWS ECS, enabling zero-downtime deployments and rollback strategies.</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://via.placeholder.com/800x400.png?text=Kubernetes+Cluster+Diagram" alt="Project 3">
-        <div class="project-content">
-          <h3>Production-Grade Kubernetes Cluster</h3>
-          <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <ul class="contact-list">
-        <li>Email: mahesh@example.com</li>
-        <li>Phone: +91-XXXXXXXXXX</li>
-        <li>LinkedIn: linkedin.com/in/mahesh-pawar</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 Mahesh Pawar. All rights reserved.</p>
+  <footer>
+    &copy; 2025 Mahesh Pawar | mahesh.devops24@gmail.com
   </footer>
-
 </body>
 </html>
