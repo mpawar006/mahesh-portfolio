@@ -1,90 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahesh Pawar - Cloud DevOps Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f3f4f6, #e0f7fa);
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-header {
-  background-color: #0d47a1;
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 2rem;
-}
-section {
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 1000px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-h2 {
-  color: #0d47a1;
-  border-bottom: 2px solid #82b1ff;
-  padding-bottom: 0.5rem;
-}
-.project a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #0288d1;
-  text-decoration: none;
-  font-weight: bold;
-}
-.project a:hover {
-  text-decoration: underline;
-}
-form input, form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-form button {
-  background-color: #0d47a1;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-form button:hover {
-  background-color: #1565c0;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  background-color: #eeeeee;
-  color: #555;
-}
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-</style>
+    :root {
+      --bg-dark: #0f172a;
+      --gradient-start: #0f172a;
+      --gradient-mid: #1e3a8a;
+      --gradient-end: #0d9488;
+      --text-primary: #e0f2f1;
+      --accent: #0ea5e9;
+      --accent-hover: #38bdf8;
+      --button-bg: linear-gradient(90deg, #3b82f6, #06b6d4);
+      --button-hover: linear-gradient(90deg, #06b6d4, #3b82f6);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: transparent;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
+      margin: 1.5rem auto 1rem;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    h2 {
+      font-size: 1.8rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .project {
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #0f172a, #1e3a8a);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .project h3 {
+      color: #93c5fd;
+    }
+    .project a {
+      color: #67e8f9;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-decoration: none;
+    }
+    .project a:hover {
+      color: #22d3ee;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      border: none;
+      background-color: #1e293b;
+      color: #e0f2f1;
+    }
+    form button {
+      background: var(--button-bg);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: var(--button-hover);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #0f172a;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
   <header>
-    Mahesh Pawar - Cloud & DevOps Engineer
+    <img src="images/profile.jpg" alt="Mahesh Pawar" class="profile-photo">
+    <h1>Mahesh Pawar</h1>
+    <p>Cloud & DevOps Engineer | AWS Certified</p>
   </header>
 
   <section id="about">
-    <img src="images/profile.jpg" alt="Mahesh Pawar" class="profile-photo">
     <h2>About Me</h2>
     <p>I am a Cloud & DevOps Engineer with expertise in automating cloud infrastructure, deploying scalable microservices, and implementing CI/CD pipelines using modern DevOps tools like GitHub, Jenkins, Docker, Kubernetes, and Terraform.</p>
   </section>
@@ -101,36 +148,36 @@ footer {
   </section>
 
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Abode Software DevOps Lifecycle</h3>
-    <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
-    <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">GitHub Repo</a>
-  </div>
+    <div class="project">
+      <h3>Abode Software DevOps Lifecycle</h3>
+      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
+      <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">GitHub Repo</a>
+    </div>
 
-  <div class="project">
-    <h3>Zendrix Corporation</h3>
-    <p>CI/CD pipeline using Jenkins, Docker, and Code Deploy for a microservices app, infrastructure created using terraform and configuration management using ansible.</p>
-    <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">GitHub Repo</a>
-  </div>
+    <div class="project">
+      <h3>Zendrix Corporation</h3>
+      <p>CI/CD pipeline using Jenkins, Docker, and Code Deploy for a microservices app, infrastructure created using terraform and configuration management using ansible.</p>
+      <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">GitHub Repo</a>
+    </div>
 
-  <div class="project">
-    <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
-    <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
-    <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">GitHub Repo</a>
-  </div>
+    <div class="project">
+      <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
+      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
+      <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">GitHub Repo</a>
+    </div>
 
-  <div class="project">
-    <h3>Multi-Region HA Architecture on AWS</h3>
-    <p>Designed and deployed a secure, scalable architecture using AWS services such as VPC, ALB, Auto Scaling Groups, and RDS with cross-region replication for high availability.</p>
-  </div>
+    <div class="project">
+      <h3>Multi-Region HA Architecture on AWS</h3>
+      <p>Designed and deployed a secure, scalable architecture using AWS services such as VPC, ALB, Auto Scaling Groups, and RDS with cross-region replication for high availability.</p>
+    </div>
 
-  <div class="project">
-    <h3>Production-Grade Kubernetes Cluster</h3>
-    <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
-  </div>
-</section>
+    <div class="project">
+      <h3>Production-Grade Kubernetes Cluster</h3>
+      <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
+    </div>
+  </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
