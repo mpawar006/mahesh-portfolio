@@ -43,10 +43,11 @@
       color: #cbd5e1;
     }
     .profile-photo {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      object-fit: cover;
+      object-fit: contain;
+      background-color: #fff;
       border: 4px solid white;
       box-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
       margin: 1.5rem auto 1rem;
@@ -122,6 +123,21 @@
       background-color: #0f172a;
       color: #94a3b8;
     }
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .cert {
+      background: #1e293b;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      color: #67e8f9;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      flex: 1 1 45%;
+    }
   </style>
 </head>
 <body>
@@ -176,6 +192,16 @@
     <div class="project">
       <h3>Production-Grade Kubernetes Cluster</h3>
       <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="cert">🏆 AWS Solutions Architect</div>
+      <div class="cert">🏆 Kubernetes Administrator</div>
+      <div class="cert">🏆 DevOps Professional</div>
+      <div class="cert">🏆 Linux</div>
     </div>
   </section>
 
