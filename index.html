@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahesh Pawar - Cloud & DevOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg-dark: #0f172a;
-      --gradient-start: #0f172a;
-      --gradient-mid: #1e3a8a;
-      --gradient-end: #0d9488;
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --accent: #0ea5e9;
-      --accent-hover: #38bdf8;
-      --card-bg: rgba(15, 23, 42, 0.7);
-      --button-bg: linear-gradient(135deg, #3b82f6, #06b6d4);
-      --button-hover: linear-gradient(135deg, #06b6d4, #3b82f6);
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #06b6d4;
+      --dark: #0f172a;
+      --darker: #020617;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --card-bg: rgba(2, 6, 23, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --nav-bg: rgba(2, 6, 23, 0.9);
     }
     
     * {
@@ -29,311 +28,607 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-      color: var(--text-primary);
+      background-color: var(--dark);
+      color: var(--light);
       line-height: 1.6;
-      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 80% 20%, rgba(56, 182, 255, 0.15) 0, transparent 50%),
+        radial-gradient(at 20% 80%, rgba(6, 182, 212, 0.15) 0, transparent 50%);
     }
     
-    header {
-      padding: 3rem 2rem 2rem;
-      text-align: center;
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo i {
+      font-size: 1.3rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
+      padding: 0.5rem 0;
     }
     
-    header::before {
+    .nav-links a::after {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-      z-index: -1;
-      animation: pulse 15s infinite alternate;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
     }
     
-    @keyframes pulse {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
+    .nav-links a:hover {
+      color: var(--light);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .resume-btn {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .resume-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+    }
+    
+    /* Header with animated gradient */
+    header {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
       margin: 0 auto 1.5rem;
-      display: block;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-      background: rgba(15, 23, 42, 0.3);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
     .profile-photo:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(59, 130, 246, 0.7);
+      box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
       border-color: rgba(255, 255, 255, 0.3);
     }
     
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
-      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      color: transparent;
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
     
     header p {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
     }
     
     .social-links {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     
     .social-links a {
-      color: var(--text-secondary);
-      font-size: 1.5rem;
-      transition: color 0.3s ease, transform 0.3s ease;
+      color: var(--gray);
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
     }
     
     .social-links a:hover {
-      color: var(--accent);
+      color: var(--light);
+      background: rgba(0, 102, 255, 0.2);
       transform: translateY(-3px);
     }
     
+    /* Main container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Section styling */
     section {
-      max-width: 1000px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--card-border);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
     }
     
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
       position: relative;
-      padding-left: 1rem;
-      color: var(--accent);
+      color: var(--light);
+      font-weight: 600;
     }
     
-    h2::before {
+    h2::after {
       content: '';
       position: absolute;
       left: 0;
-      top: 0;
-      height: 100%;
-      width: 4px;
-      background: linear-gradient(to bottom, #3b82f6, #06b6d4);
-      border-radius: 4px;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 2px;
     }
     
-    p, li {
-      color: var(--text-secondary);
-    }
-    
-    ul {
-      list-style-position: inside;
-    }
-    
-    ul li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-    
-    ul li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    
-    .project {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.6));
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .project h3 {
-      color: #93c5fd;
-      margin-bottom: 0.8rem;
-      font-size: 1.3rem;
-    }
-    
-    .project p {
+    /* About section */
+    #about p {
       margin-bottom: 1rem;
+      color: var(--gray);
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
     
-    .project a {
-      color: #67e8f9;
-      font-weight: 600;
-      text-decoration: none;
+    /* Skills section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .skill-category {
+      background: rgba(15, 23, 42, 0.5);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-category:hover {
+      transform: translateY(-5px);
+      background: rgba(15, 23, 42, 0.7);
+    }
+    
+    .skill-category h3 {
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-category ul {
+      list-style: none;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.7rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-category li::before {
+      content: '▹';
+      color: var(--secondary);
+    }
+    
+    .skill-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    
+    /* Projects section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .project-card {
+      background: linear-gradient(145deg, rgba(2, 6, 23, 0.8), rgba(15, 23, 42, 0.6));
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--card-border);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(0, 102, 255, 0.1) 0%,
+        transparent 50%,
+        rgba(6, 182, 212, 0.1) 100%
+      );
+      transform: rotate(30deg);
+      transition: all 0.6s ease;
+      opacity: 0;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+    }
+    
+    .project-card:hover::before {
+      opacity: 1;
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: rotate(30deg) translate(-10%, -10%); }
+      100% { transform: rotate(30deg) translate(10%, 10%); }
+    }
+    
+    .project-card h3 {
+      color: var(--light);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .project-card p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .project-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: color 0.3s ease;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
     
-    .project a:hover {
-      color: #22d3ee;
+    .project-link.primary {
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      color: white;
     }
     
-    .project a i {
-      font-size: 0.9rem;
+    .project-link.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--light);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
-    .certifications {
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+    }
+    
+    /* Certifications */
+    .certifications-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
     
-    .cert {
-      background: rgba(30, 41, 59, 0.7);
-      padding: 1rem;
-      border-radius: 10px;
-      color: #67e8f9;
-      font-weight: 600;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .cert-card {
+      background: linear-gradient(145deg, rgba(2, 6, 23, 0.8), rgba(15, 23, 42, 0.6));
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--card-border);
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      gap: 1rem;
     }
     
-    .cert:hover {
-      transform: translateY(-3px);
-      background: rgba(30, 41, 59, 0.9);
+    .cert-card:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(145deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.7));
+      box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
     }
     
-    .cert i {
+    .cert-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
       font-size: 1.2rem;
     }
     
-    form {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1.5rem;
+    .cert-info h3 {
+      color: var(--light);
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
     }
     
-    form input,
-    form textarea {
+    .cert-info p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Contact form */
+    .contact-form {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .form-group {
+      display: grid;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      color: var(--light);
+      font-weight: 500;
+    }
+    
+    .form-control {
       width: 100%;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
-      background: rgba(30, 41, 59, 0.7);
-      color: var(--text-primary);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--light);
       font-family: 'Inter', sans-serif;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--card-border);
+      transition: all 0.3s ease;
     }
     
-    form input:focus,
-    form textarea:focus {
+    .form-control:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
     }
     
-    form textarea {
+    textarea.form-control {
       min-height: 150px;
       resize: vertical;
     }
     
-    form button {
-      background: var(--button-bg);
+    .submit-btn {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
       padding: 1rem 2rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       color: white;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      justify-self: start;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
     
-    form button:hover {
-      background: var(--button-hover);
-      box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
     }
     
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      background: rgba(15, 23, 42, 0.8);
-      margin-top: 3rem;
+      padding: 3rem 2rem;
+      background: var(--darker);
+      margin-top: 4rem;
+      position: relative;
     }
     
-    footer p {
-      margin-bottom: 0.5rem;
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
     }
     
     .footer-links {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 1rem;
+      margin: 1.5rem 0;
     }
     
     .footer-links a {
-      color: var(--text-secondary);
+      color: var(--gray);
       text-decoration: none;
       transition: color 0.3s ease;
     }
     
     .footer-links a:hover {
-      color: var(--accent);
+      color: var(--light);
     }
     
+    .copyright {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+    }
+    
+    /* Responsive design */
     @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
       header {
-        padding: 2rem 1rem;
+        padding: 7rem 1.5rem 3rem;
       }
       
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
       }
       
       section {
-        padding: 1.5rem;
-        margin: 1.5rem auto;
-        border-radius: 12px;
+        padding: 1.8rem;
+        margin: 2rem auto;
       }
       
-      .certifications {
+      .projects-grid {
         grid-template-columns: 1fr;
       }
       
@@ -341,9 +636,19 @@
         width: 150px;
         height: 150px;
       }
+      
+      .social-links a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
     }
     
-    /* Animation for subtle movement */
+    /* Animations */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
@@ -352,115 +657,337 @@
     .floating {
       animation: float 6s ease-in-out infinite;
     }
+    
+    /* Fade-in animation for sections */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    /* Delay animations for each section */
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-cloud"></i>
+        <span>Mahesh Pawar</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="resume.pdf" download class="resume-btn">
+        <i class="fas fa-download"></i> Resume
+      </a>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
   <header>
     <img src="images/profile.JPG" alt="Mahesh Pawar" class="profile-photo floating">
     <h1>Mahesh Pawar</h1>
-    <p>Cloud & DevOps Engineer | AWS Certified</p>
+    <p>Cloud & DevOps Engineer | AWS Certified Solutions Architect | Kubernetes Expert</p>
     <div class="social-links">
-      <a href="https://linkedin.com/in/mpawar006" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://linkedin.com/in/mpawar006" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/mpawar006" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://twitter.com/mpawar006" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       <a href="mailto:info@mahesh-pawar.site" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a passionate Cloud & DevOps Engineer with extensive experience in designing, implementing, and managing cloud infrastructure and CI/CD pipelines. My expertise lies in automating deployments, optimizing cloud resources, and ensuring high availability of distributed systems.</p>
-    <p>With AWS certification and hands-on experience with modern DevOps tools, I bridge the gap between development and operations to deliver scalable, secure, and efficient solutions.</p>
-  </section>
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a passionate Cloud & DevOps Engineer with 5+ years of experience designing, implementing, and optimizing cloud-native solutions. I specialize in building scalable infrastructure, automating deployments, and implementing robust CI/CD pipelines that accelerate development cycles while maintaining high reliability standards.</p>
+      <p>My expertise spans across AWS cloud services, Kubernetes orchestration, infrastructure as code, and full-stack DevOps implementations. I bridge the gap between development and operations to deliver solutions that are both technically excellent and business-aligned.</p>
+    </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda, RDS, VPC), Azure, GCP</li>
-      <li><strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI, ArgoCD</li>
-      <li><strong>Containerization:</strong> Docker, Kubernetes, EKS, ECS</li>
-      <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</li>
-      <li><strong>Monitoring:</strong> Prometheus, Grafana, CloudWatch, ELK Stack</li>
-      <li><strong>Scripting:</strong> Bash, Python, PowerShell</li>
-      <li><strong>Version Control:</strong> Git, GitHub, Bitbucket</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Featured Projects</h2>
-
-    <div class="project">
-      <h3>Abode Software DevOps Lifecycle</h3>
-      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application. Reduced deployment time by 80% and improved reliability with automated rollback mechanisms.</p>
-      <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">
-        <i class="fas fa-external-link-alt"></i> View on GitHub
-      </a>
-    </div>
-
-    <div class="project">
-      <h3>Zendrix Corporation CI/CD Pipeline</h3>
-      <p>Implemented a robust CI/CD pipeline using Jenkins, Docker, and CodeDeploy for a microservices architecture. Infrastructure provisioned using Terraform with configuration management handled by Ansible, achieving 99.9% deployment success rate.</p>
-      <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">
-        <i class="fas fa-external-link-alt"></i> View on GitHub
-      </a>
-    </div>
-
-<div class="project">
-  <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
-  <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application. Streamlined the development workflow and reduced manual errors by 90% through comprehensive automation.</p>
-  <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">
-    <i class="fas fa-external-link-alt"></i> View on GitHub
-  </a>
-</div>
-    <div class="project">
-      <h3>Multi-Region HA Architecture on AWS</h3>
-      <p>Architected and deployed a highly available, fault-tolerant system across multiple AWS regions using VPC peering, ALB, Auto Scaling Groups, and RDS with cross-region replication. Achieved 99.99% uptime for critical business applications.</p>
-    </div>
-
-    <div class="project">
-      <h3>Production-Grade Kubernetes Cluster</h3>
-      <p>Set up a secure, scalable Kubernetes cluster on AWS EKS with Helm for package management and ArgoCD for GitOps workflows. Implemented monitoring with Prometheus/Grafana and autoscaling based on custom metrics.</p>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certifications">
-      <div class="cert">
-        <i class="fab fa-aws"></i> AWS Certified Solutions Architect - Professional
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="skill-logo" alt="AWS"> AWS (EC2, S3, Lambda, RDS)</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" class="skill-logo" alt="Azure"> Azure (AKS, App Services)</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original-wordmark.svg" class="skill-logo" alt="GCP"> Google Cloud Platform</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original-wordmark.svg" class="skill-logo" alt="DigitalOcean"> Serverless Architectures</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-code-branch"></i> CI/CD & DevOps</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" class="skill-logo" alt="Jenkins"> Jenkins, GitHub Actions</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original-wordmark.svg" class="skill-logo" alt="GitLab"> GitLab CI</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original-wordmark.svg" class="skill-logo" alt="ArgoCD"> ArgoCD, Flux</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/circleci/circleci-plain-wordmark.svg" class="skill-logo" alt="CircleCI"> CircleCI</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-box"></i> Containerization</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" class="skill-logo" alt="Docker"> Docker, Containerd</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain-wordmark.svg" class="skill-logo" alt="Kubernetes"> Kubernetes (EKS, AKS)</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original-wordmark.svg" class="skill-logo" alt="Helm"> Helm, Kustomize</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rancher/rancher-original-wordmark.svg" class="skill-logo" alt="Rancher"> Rancher, OpenShift</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Infrastructure as Code</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original-wordmark.svg" class="skill-logo" alt="Terraform"> Terraform, CloudFormation</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original-wordmark.svg" class="skill-logo" alt="Ansible"> Ansible, Puppet</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pulumi/pulumi-original-wordmark.svg" class="skill-logo" alt="Pulumi"> Pulumi, Crossplane</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vagrant/vagrant-original-wordmark.svg" class="skill-logo" alt="Vagrant"> Vagrant, Packer</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-chart-line"></i> Monitoring & Logging</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original-wordmark.svg" class="skill-logo" alt="Prometheus"> Prometheus, Grafana</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original-wordmark.svg" class="skill-logo" alt="ELK"> ELK Stack</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/splunk/splunk-original-wordmark.svg" class="skill-logo" alt="Splunk"> Splunk, Datadog</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/newrelic/newrelic-original-wordmark.svg" class="skill-logo" alt="New Relic"> New Relic</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Scripting & Languages</h3>
+          <ul>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" class="skill-logo" alt="Bash"> Bash, PowerShell</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" class="skill-logo" alt="Python"> Python, Go</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yaml/yaml-original.svg" class="skill-logo" alt="YAML"> YAML, JSON</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" class="skill-logo" alt="Linux"> Linux Administration</li>
+          </ul>
+        </div>
       </div>
-      <div class="cert">
-        <i class="fas fa-certificate"></i> Certified Kubernetes Administrator (CKA)
-      </div>
-      <div class="cert">
-        <i class="fas fa-server"></i> HashiCorp Certified: Terraform Associate
-      </div>
-      <div class="cert">
-        <i class="fab fa-linux"></i> Red Hat Certified Engineer (RHCE)
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out!</p>
-    <form action="https://formspree.io/f/mgvzybbl" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">
-        <i class="fas fa-paper-plane"></i> Send Message
-      </button>
-    </form>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Abode Software DevOps Lifecycle</h3>
+          <p>Implemented end-to-end CI/CD pipeline using Jenkins, Docker, and Kubernetes that reduced deployment times by 80%. Automated infrastructure provisioning with Terraform and configuration management with Ansible.</p>
+          <div class="project-links">
+            <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank" class="project-link primary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <a href="#" class="project-link secondary">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Zendrix Corporation CI/CD Pipeline</h3>
+          <p>Designed microservices architecture with Kubernetes on AWS EKS. Implemented GitOps workflow with ArgoCD and security scanning in the pipeline, achieving 99.9% deployment success rate.</p>
+          <div class="project-links">
+            <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank" class="project-link primary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
+          <p>Built complete DevOps lifecycle for analytics platform using Git, Jenkins, Docker and Kubernetes. Automated testing and deployment reduced manual errors by 90% while improving deployment frequency.</p>
+          <div class="project-links">
+            <a href="https://github.com/mpawar006/website-cp1.git" target="_blank" class="project-link primary">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Multi-Region HA Architecture</h3>
+          <p>Architected fault-tolerant system across AWS regions using VPC peering, ALB, Auto Scaling and RDS replication. Achieved 99.99% uptime SLA for critical customer-facing applications.</p>
+          <div class="project-links">
+            <a href="#" class="project-link secondary">
+              <i class="fas fa-book"></i> Case Study
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Production Kubernetes Cluster</h3>
+          <p>Deployed secure EKS cluster with Helm, Istio service mesh, and Prometheus monitoring. Implemented HPA and cluster autoscaler to optimize resource utilization by 40%.</p>
+          <div class="project-links">
+            <a href="#" class="project-link secondary">
+              <i class="fas fa-book"></i> Case Study
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications-grid">
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fab fa-aws"></i>
+          </div>
+          <div class="cert-info">
+            <h3>AWS Solutions Architect</h3>
+            <p>Professional | Valid through 2025</p>
+          </div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Certified Kubernetes Administrator</h3>
+            <p>CNCF | Valid through 2024</p>
+          </div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Terraform Associate</h3>
+            <p>HashiCorp | Valid through 2024</p>
+          </div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fab fa-linux"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Red Hat Certified Engineer</h3>
+            <p>RHCE | Valid through 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out!</p>
+      <form class="contact-form" action="https://formspree.io/f/xvgqqbwp" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" class="form-control" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Mahesh Pawar. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="mailto:info@mahesh-pawar.site">info@mahesh-pawar.site</a>
-      <a href="tel:+1234567890">+91 (233) 3577-267</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mailto:info@mahesh-pawar.site">Email</a>
+        <a href="tel:+912333577267">Phone</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="resume.pdf" download>Download Resume</a>
+      </div>
+      <p class="copyright">© 2025 Mahesh Pawar. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animate elements when they come into view
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('section, .project-card, .cert-card');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Initialize animation states
+    document.querySelectorAll('section, .project-card, .cert-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
 </body>
 </html>
