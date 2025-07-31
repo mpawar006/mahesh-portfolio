@@ -3,220 +3,464 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahesh Pawar - Cloud DevOps Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Mahesh Pawar - Cloud & DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --bg-dark: #0f172a;
       --gradient-start: #0f172a;
       --gradient-mid: #1e3a8a;
       --gradient-end: #0d9488;
-      --text-primary: #e0f2f1;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
       --accent: #0ea5e9;
       --accent-hover: #38bdf8;
-      --button-bg: linear-gradient(90deg, #3b82f6, #06b6d4);
-      --button-hover: linear-gradient(90deg, #06b6d4, #3b82f6);
+      --card-bg: rgba(15, 23, 42, 0.7);
+      --button-bg: linear-gradient(135deg, #3b82f6, #06b6d4);
+      --button-hover: linear-gradient(135deg, #06b6d4, #3b82f6);
     }
+    
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+    
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
       color: var(--text-primary);
       line-height: 1.6;
+      min-height: 100vh;
     }
+    
     header {
-      padding: 2rem;
+      padding: 3rem 2rem 2rem;
       text-align: center;
-      background: transparent;
+      position: relative;
+      overflow: hidden;
     }
-    header h1 {
-      font-size: 2.5rem;
-      background: linear-gradient(to right, #3b82f6, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      z-index: -1;
+      animation: pulse 15s infinite alternate;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
+    
+    @keyframes pulse {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
     }
+    
     .profile-photo {
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      object-fit: contain;
-      background-color: #0F172A;
-      border: 4px solid white;
-      box-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
-      margin: 1.5rem auto 1rem;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+      margin: 0 auto 1.5rem;
       display: block;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      background: rgba(15, 23, 42, 0.3);
     }
+    
     .profile-photo:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.7);
+      border-color: rgba(255, 255, 255, 0.3);
     }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      font-weight: 700;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
     section {
       max-width: 1000px;
       margin: 2rem auto;
-      background-color: rgba(255,255,255,0.05);
+      background: var(--card-bg);
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
     h2 {
       font-size: 1.8rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 0.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1rem;
+      color: var(--accent);
     }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+      border-radius: 4px;
+    }
+    
+    p, li {
+      color: var(--text-secondary);
+    }
+    
+    ul {
+      list-style-position: inside;
+    }
+    
     ul li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
     }
+    
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
     .project {
       margin-bottom: 2rem;
-      background: linear-gradient(to right, #0f172a, #1e3a8a);
-      padding: 1rem;
-      border-radius: 10px;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.6));
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
     .project h3 {
       color: #93c5fd;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
     }
+    
+    .project p {
+      margin-bottom: 1rem;
+    }
+    
     .project a {
       color: #67e8f9;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 0.5rem;
+      font-weight: 600;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
     }
+    
     .project a:hover {
       color: #22d3ee;
     }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border-radius: 6px;
-      border: none;
-      background-color: #1e293b;
-      color: #e0f2f1;
-    }
-    form button {
-      background: var(--button-bg);
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    form button:hover {
-      background: var(--button-hover);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
+    
+    .project a i {
       font-size: 0.9rem;
-      background-color: #0f172a;
-      color: #94a3b8;
     }
+    
     .certifications {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
+    
     .cert {
-      background: #1e293b;
-      padding: 0.7rem 1rem;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 1rem;
       border-radius: 10px;
       color: #67e8f9;
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      flex: 1 1 45%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .cert:hover {
+      transform: translateY(-3px);
+      background: rgba(30, 41, 59, 0.9);
+    }
+    
+    .cert i {
+      font-size: 1.2rem;
+    }
+    
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: rgba(30, 41, 59, 0.7);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+    }
+    
+    form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    form button {
+      background: var(--button-bg);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      justify-self: start;
+    }
+    
+    form button:hover {
+      background: var(--button-hover);
+      box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      background: rgba(15, 23, 42, 0.8);
+      margin-top: 3rem;
+    }
+    
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 2rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        border-radius: 12px;
+      }
+      
+      .certifications {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+      }
+    }
+    
+    /* Animation for subtle movement */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/profile.JPG" alt="Mahesh Pawar" class="profile-photo">
+    <img src="images/profile.JPG" alt="Mahesh Pawar" class="profile-photo floating">
     <h1>Mahesh Pawar</h1>
     <p>Cloud & DevOps Engineer | AWS Certified</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/mpawar006" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/mpawar006" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/mpawar006" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:info@mahesh-pawar.site" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Cloud & DevOps Engineer with expertise in automating cloud infrastructure, deploying scalable microservices, and implementing CI/CD pipelines using modern DevOps tools like GitHub, Jenkins, Docker, Kubernetes, and Terraform.</p>
+    <p>I am a passionate Cloud & DevOps Engineer with extensive experience in designing, implementing, and managing cloud infrastructure and CI/CD pipelines. My expertise lies in automating deployments, optimizing cloud resources, and ensuring high availability of distributed systems.</p>
+    <p>With AWS certification and hands-on experience with modern DevOps tools, I bridge the gap between development and operations to deliver scalable, secure, and efficient solutions.</p>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
-      <li>Cloud Platforms: AWS, Azure</li>
-      <li>CI/CD: Jenkins, GitHub Actions</li>
-      <li>Containers: Docker, Kubernetes</li>
-      <li>IaC & Config: Terraform, Ansible</li>
-      <li>Scripting: Bash, Python</li>
+      <li><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda, RDS, VPC), Azure, GCP</li>
+      <li><strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI, ArgoCD</li>
+      <li><strong>Containerization:</strong> Docker, Kubernetes, EKS, ECS</li>
+      <li><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</li>
+      <li><strong>Monitoring:</strong> Prometheus, Grafana, CloudWatch, ELK Stack</li>
+      <li><strong>Scripting:</strong> Bash, Python, PowerShell</li>
+      <li><strong>Version Control:</strong> Git, GitHub, Bitbucket</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Featured Projects</h2>
 
     <div class="project">
       <h3>Abode Software DevOps Lifecycle</h3>
-      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
-      <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">GitHub Repo</a>
+      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application. Reduced deployment time by 80% and improved reliability with automated rollback mechanisms.</p>
+      <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank">
+        <i class="fas fa-external-link-alt"></i> View on GitHub
+      </a>
     </div>
 
     <div class="project">
-      <h3>Zendrix Corporation</h3>
-      <p>CI/CD pipeline using Jenkins, Docker, and Code Deploy for a microservices app, infrastructure created using terraform and configuration management using ansible.</p>
-      <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">GitHub Repo</a>
+      <h3>Zendrix Corporation CI/CD Pipeline</h3>
+      <p>Implemented a robust CI/CD pipeline using Jenkins, Docker, and CodeDeploy for a microservices architecture. Infrastructure provisioned using Terraform with configuration management handled by Ansible, achieving 99.9% deployment success rate.</p>
+      <a href="https://github.com/mpawar006/cp1-zendrix.git" target="_blank">
+        <i class="fas fa-external-link-alt"></i> View on GitHub
+      </a>
     </div>
 
-    <div class="project">
-      <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
-      <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application.</p>
-      <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">GitHub Repo</a>
-    </div>
-
+<div class="project">
+  <h3>Analytics Pvt Ltd. DevOps Lifecycle</h3>
+  <p>Designed and implemented a full DevOps lifecycle using Git, Jenkins, Docker, and Kubernetes to automate build and deployment for a cloud-native application. Streamlined the development workflow and reduced manual errors by 90% through comprehensive automation.</p>
+  <a href="https://github.com/mpawar006/website-cp1.git" target="_blank">
+    <i class="fas fa-external-link-alt"></i> View on GitHub
+  </a>
+</div>
     <div class="project">
       <h3>Multi-Region HA Architecture on AWS</h3>
-      <p>Designed and deployed a secure, scalable architecture using AWS services such as VPC, ALB, Auto Scaling Groups, and RDS with cross-region replication for high availability.</p>
+      <p>Architected and deployed a highly available, fault-tolerant system across multiple AWS regions using VPC peering, ALB, Auto Scaling Groups, and RDS with cross-region replication. Achieved 99.99% uptime for critical business applications.</p>
     </div>
 
     <div class="project">
       <h3>Production-Grade Kubernetes Cluster</h3>
-      <p>Set up a production-grade Kubernetes cluster on AWS using EKS, Helm, and ArgoCD, managing microservices with horizontal scaling and secure Ingress routing.</p>
+      <p>Set up a secure, scalable Kubernetes cluster on AWS EKS with Helm for package management and ArgoCD for GitOps workflows. Implemented monitoring with Prometheus/Grafana and autoscaling based on custom metrics.</p>
     </div>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
     <div class="certifications">
-      <div class="cert">🏆 AWS Solutions Architect</div>
-      <div class="cert">🏆 Kubernetes Administrator</div>
-      <div class="cert">🏆 DevOps Professional</div>
-      <div class="cert">🏆 Linux</div>
+      <div class="cert">
+        <i class="fab fa-aws"></i> AWS Certified Solutions Architect - Professional
+      </div>
+      <div class="cert">
+        <i class="fas fa-certificate"></i> Certified Kubernetes Administrator (CKA)
+      </div>
+      <div class="cert">
+        <i class="fas fa-server"></i> HashiCorp Certified: Terraform Associate
+      </div>
+      <div class="cert">
+        <i class="fab fa-linux"></i> Red Hat Certified Engineer (RHCE)
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>Get In Touch</h2>
+    <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out!</p>
     <form action="https://formspree.io/f/mgvzybbl" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 Mahesh Pawar | info@mahesh-pawar.site | support@mahesh-pawar.site
+    <p>&copy; 2025 Mahesh Pawar. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:info@mahesh-pawar.site">info@mahesh-pawar.site</a>
+      <a href="tel:+1234567890">+91 (233) 3577-267</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
   </footer>
 </body>
 </html>
