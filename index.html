@@ -293,23 +293,25 @@
       margin: 0 auto;
     }
     
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+      margin: 0 auto 1.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+    
 .profile-photo {
   /* ...other properties... */
   object-fit: cover;
   object-position: top; /* Adjusts the vertical alignment of the image */
   /* ...other properties... */
 }
-
-.profile-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.4);
-}
-    
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.05); opacity: 0.3; }
-      100% { transform: scale(1); opacity: 0.7; }
-    }
     
     .profile-photo:hover {
       transform: scale(1.05);
@@ -1206,8 +1208,8 @@
       }
       
       .profile-photo {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
       }
       
       .social-links a {
@@ -1690,6 +1692,27 @@
             </div>
           </div>
         </div>
+        
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kubernetes Cluster">
+          </div>
+          <div class="project-content">
+            <h3>Production Kubernetes Cluster</h3>
+            <p>Deployed secure EKS cluster with Helm, Istio service mesh, and Prometheus monitoring. Implemented HPA and cluster autoscaler to optimize resource utilization by 40%.</p>
+            <div class="project-tags">
+              <span class="project-tag">EKS</span>
+              <span class="project-tag">Helm</span>
+              <span class="project-tag">Istio</span>
+              <span class="project-tag">Prometheus</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link secondary">
+                <i class="fas fa-book"></i> Case Study
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -1699,41 +1722,41 @@
       <div class="certifications-grid">
         <div class="cert-card">
           <div class="cert-icon">
-            <i class="fas fa-award"></i>
+            <i class="fab fa-aws"></i>
           </div>
           <div class="cert-info">
-            <h3>AWS Certified Solutions Architect</h3>
-            <p>Amazon Web Services</p>
+            <h3>AWS Solutions Architect</h3>
+            <p>Professional | Valid through 2025</p>
           </div>
         </div>
         
         <div class="cert-card">
           <div class="cert-icon">
-            <i class="fas fa-award"></i>
+            <i class="fas fa-certificate"></i>
           </div>
           <div class="cert-info">
             <h3>Certified Kubernetes Administrator</h3>
-            <p>Cloud Native Computing Foundation</p>
+            <p>CNCF | Valid through 2024</p>
           </div>
         </div>
         
         <div class="cert-card">
           <div class="cert-icon">
-            <i class="fas fa-award"></i>
+            <i class="fas fa-server"></i>
           </div>
           <div class="cert-info">
             <h3>Terraform Associate</h3>
-            <p>HashiCorp</p>
+            <p>HashiCorp | Valid through 2024</p>
           </div>
         </div>
         
         <div class="cert-card">
           <div class="cert-icon">
-            <i class="fas fa-award"></i>
+            <i class="fab fa-linux"></i>
           </div>
           <div class="cert-info">
-            <h3>Docker Certified Associate</h3>
-            <p>Docker Inc.</p>
+            <h3>Red Hat Certified Engineer</h3>
+            <p>RHCE | Valid through 2024</p>
           </div>
         </div>
       </div>
@@ -1744,40 +1767,34 @@
       <h2>Testimonials</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="testimonial-text">
-            "Mahesh's expertise in DevOps and cloud infrastructure transformed our deployment process. His solutions reduced our deployment time by 80% and significantly improved system reliability."
-          </div>
+          <p class="testimonial-text">"Mahesh's expertise in AWS and Kubernetes transformed our infrastructure. His DevOps implementation reduced our deployment time by 80% and improved system reliability significantly."</p>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Client" class="author-img">
             <div class="author-info">
-              <h4>Alex Johnson</h4>
-              <p>CTO, Tech Innovations</p>
+              <h4>John Smith</h4>
+              <p>CTO, TechCorp</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-text">
-            "Working with Mahesh was a game-changer for our infrastructure. His deep knowledge of Kubernetes and CI/CD pipelines helped us achieve seamless deployments and improved scalability."
-          </div>
+          <p class="testimonial-text">"Working with Mahesh was a game-changer for our team. His deep knowledge of CI/CD pipelines and infrastructure automation helped us scale our operations efficiently."</p>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="author-img">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Client" class="author-img">
             <div class="author-info">
-              <h4>Sarah Williams</h4>
-              <p>DevOps Manager, Cloud Solutions</p>
+              <h4>Sarah Johnson</h4>
+              <p>DevOps Manager, CloudTech</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-text">
-            "Mahesh's automation skills and attention to detail are exceptional. He implemented monitoring solutions that gave us unprecedented visibility into our systems' performance."
-          </div>
+          <p class="testimonial-text">"Mahesh's approach to cloud architecture is both innovative and practical. He delivered a robust, scalable solution that exceeded our expectations and budget constraints."</p>
           <div class="testimonial-author">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Client" class="author-img">
             <div class="author-info">
               <h4>Michael Chen</h4>
-              <p>VP Engineering, DataTech</p>
+              <p>VP Engineering, DataFlow</p>
             </div>
           </div>
         </div>
@@ -1787,30 +1804,24 @@
     <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
-      <p>If you have any questions or would like to work together, feel free to reach out to me!</p>
-      
-      <form class="contact-form" id="contactForm">
+      <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out!</p>
+      <form action="https://formspree.io/f/xvgqqbwp" method="POST" class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
         </div>
         
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
         </div>
         
         <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" class="form-control" required></textarea>
         </div>
         
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn" id="submitBtn">
           <i class="fas fa-paper-plane"></i> Send Message
         </button>
       </form>
@@ -1821,22 +1832,23 @@
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="mailto:support@mahesh-pawar.site">Email</a>
+        <a href="tel:+912333577267">Phone</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="Mahesh_Pawar_Resume.pdf" download>Download Resume</a>
       </div>
       
       <div class="footer-tags">
+        <span class="footer-tag">Cloud Architecture</span>
         <span class="footer-tag">DevOps</span>
-        <span class="footer-tag">Cloud</span>
         <span class="footer-tag">AWS</span>
         <span class="footer-tag">Kubernetes</span>
-        <span class="footer-tag">Automation</span>
+        <span class="footer-tag">Terraform</span>
+        <span class="footer-tag">CI/CD</span>
       </div>
       
-      <p class="copyright">© 2023 Mahesh Pawar. All rights reserved.</p>
-      <p class="made-by">Designed and built with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by Mahesh Pawar</p>
+      <p class="copyright">© 2025 Mahesh Pawar. All rights reserved.</p>
+      <p class="made-by">Made by Mahesh</p>
     </div>
   </footer>
   
@@ -1849,14 +1861,14 @@
   <div class="toast" id="toast"></div>
   
   <script>
-    // Loading animation
-    window.addEventListener('load', () => {
-      setTimeout(() => {
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+      setTimeout(function() {
         document.getElementById('loader').classList.add('hidden');
-      }, 1500);
+      }, 500);
     });
     
-    // Particle background
+    // Create animated particles
     const particlesContainer = document.getElementById('particles');
     const particleCount = 50;
     
@@ -1864,35 +1876,36 @@
       const particle = document.createElement('div');
       particle.classList.add('particle');
       
-      // Random size between 3px and 8px
-      const size = Math.random() * 5 + 3;
+      // Random size
+      const size = Math.random() * 6 + 2;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       
       // Random position
       particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
       
-      // Random animation delay and duration
-      particle.style.animationDelay = `${Math.random() * 15}s`;
-      particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
+      // Random animation duration
+      particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
       
       particlesContainer.appendChild(particle);
     }
     
-    // Typing animation
+    // Typing animation for subtitle
     const typingText = document.getElementById('typingText');
     const roles = [
-      "Cloud Engineer",
-      "DevOps Specialist",
-      "Infrastructure Architect",
-      "Automation Expert"
+      "Cloud & DevOps Engineer",
+      "AWS Certified Solutions Architect",
+      "Kubernetes Expert",
+      "Infrastructure Automation Specialist"
     ];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 100;
     
-    function type() {
+    function typeRole() {
       const currentRole = roles[roleIndex];
       
       if (isDeleting) {
@@ -1906,18 +1919,19 @@
       }
       
       if (!isDeleting && charIndex === currentRole.length) {
-        typingSpeed = 2000; // Pause at end
         isDeleting = true;
+        typingSpeed = 1000; // Pause at end
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        typingSpeed = 500; // Pause before typing next role
+        typingSpeed = 500; // Pause before typing new role
       }
       
-      setTimeout(type, typingSpeed);
+      setTimeout(typeRole, typingSpeed);
     }
     
-    type();
+    // Start typing animation
+    setTimeout(typeRole, 1000);
     
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1925,82 +1939,97 @@
     
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-    });
-    
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Check for saved theme preference or default to dark mode
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-      body.classList.add('light-mode');
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      
-      if (body.classList.contains('light-mode')) {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
       } else {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       }
     });
     
-    // Stats counter animation
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    const animateStats = () => {
-      statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        const increment = target / 100;
-        let current = 0;
-        
-        const updateStat = () => {
-          current += increment;
-          if (current < target) {
-            stat.textContent = Math.ceil(current);
-            setTimeout(updateStat, 20);
-          } else {
-            stat.textContent = target;
-          }
-        };
-        
-        updateStat();
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       });
-    };
+    });
     
-    // Intersection Observer for animations
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animate elements when they come into view using Intersection Observer
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1 
     };
     
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
           
-          // Animate stats when stats section is visible
-          if (entry.target.id === 'stats') {
-            animateStats();
+          // Animate skill bars
+          if (entry.target.classList.contains('skill-category')) {
+            const skillBars = entry.target.querySelectorAll('.skill-level');
+            skillBars.forEach(bar => {
+              const skill = bar.getAttribute('data-skill');
+              setTimeout(() => {
+                bar.style.width = `${skill}%`;
+              }, 200);
+            });
           }
           
-          // Animate skill bars when skills section is visible
-          if (entry.target.id === 'skills') {
-            const skillLevels = document.querySelectorAll('.skill-level');
-            skillLevels.forEach(skill => {
-              const skillValue = skill.getAttribute('data-skill');
-              setTimeout(() => {
-                skill.style.width = `${skillValue}%`;
-              }, 300);
+          // Animate stat counters
+          if (entry.target.id === 'stats') {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+              const target = parseInt(stat.getAttribute('data-target'));
+              let count = 0;
+              const increment = target / 50;
+              
+              const updateCount = () => {
+                if (count < target) {
+                  count += increment;
+                  stat.textContent = Math.ceil(count);
+                  setTimeout(updateCount, 30);
+                } else {
+                  stat.textContent = target;
+                }
+              };
+              
+              updateCount();
             });
           }
           
@@ -2014,83 +2043,106 @@
       observer.observe(section);
     });
     
-    // Back to top button
-    const backToTopBtn = document.getElementById('backToTop');
+    // Theme Toggle Functionality
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
     
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('visible');
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.classList.add(savedTheme);
+      if (savedTheme === 'light-mode') {
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
       } else {
-        backToTopBtn.classList.remove('visible');
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
       }
-    });
+    } else {
+      // Default to dark mode if no preference saved
+      body.classList.add('dark-mode'); 
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    }
     
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+    themeToggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem('theme', 'dark-mode');
+      } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', 'light-mode');
+      }
     });
     
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
     const toast = document.getElementById('toast');
     
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // Get form values
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value;
       
-      // Show loading state
-      const submitBtn = contactForm.querySelector('.submit-btn');
-      submitBtn.classList.add('loading');
-      submitBtn.disabled = true;
-      
-      // Simulate form submission (replace with actual form submission)
-      setTimeout(() => {
-        // Reset form
-        contactForm.reset();
+      // Simple validation
+      if (name && email && message) {
+        // Show loading state
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
         
-        // Show success message
-        toast.textContent = `Thank you, ${name}! Your message has been sent successfully.`;
-        toast.classList.add('show');
-        
-        // Remove loading state
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        
-        // Hide toast after 5 seconds
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 5000);
-      }, 1500);
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
-          if (navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
+        // Submit form using fetch API
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
           }
-        }
-      });
+        })
+        .then(response => {
+          if (response.ok) {
+            // Show success message
+            toast.textContent = 'Message sent successfully!';
+            toast.classList.add('show');
+            
+            // Reset form
+            contactForm.reset();
+          } else {
+            // Show error message
+            toast.textContent = 'Oops! There was a problem submitting your form.';
+            toast.classList.add('show');
+          }
+          
+          // Hide loading state
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 3000);
+        })
+        .catch(error => {
+          // Show error message
+          toast.textContent = 'Oops! There was a problem submitting your form.';
+          toast.classList.add('show');
+          
+          // Hide loading state
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 3000);
+          
+          console.error('Error:', error);
+        });
+      }
     });
   </script>
 </body>
