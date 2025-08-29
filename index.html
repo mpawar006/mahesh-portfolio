@@ -294,18 +294,10 @@
     }
     
 .profile-photo {
-  width: 250px;
-  height: 250px;
+  /* ...other properties... */
   object-fit: cover;
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
-  margin: 0 auto 1.5rem;
-  transition: all 0.4s ease;
-  position: relative;
-  z-index: 2;
-  background-color: var(--primary);
-  display: block;
+  object-position: top; /* Adjusts the vertical alignment of the image */
+  /* ...other properties... */
 }
 
 .profile-photo:hover {
