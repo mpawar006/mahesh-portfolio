@@ -819,9 +819,11 @@ h2::after {
 /* Certifications */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .cert-card {
@@ -862,6 +864,11 @@ h2::after {
 .cert-info p {
   color: var(--text-dim);
   font-size: 0.95rem;
+}
+
+.cert-info {
+  flex-grow: 1; /* Allows the info block to take up the available space */
+  min-width: 0; /* Prevents long text (like the PG Cert name) from enforcing a minimum width and causing overflow/overlap */
 }
 
 /* Contact form */
