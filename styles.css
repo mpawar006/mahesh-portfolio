@@ -819,7 +819,7 @@ h2::after {
 /* Certifications */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -1182,4 +1182,24 @@ section {
 
 @keyframes spinner {
   to { transform: rotate(360deg); }
+}
+
+/* Mobile-specific fix for Certification Cards */
+@media (max-width: 500px) {
+  .certifications-grid {
+    /* Force a single column layout on smaller phones to prevent overlap */
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Slightly reduce gap on mobile */
+  }
+}
+
+/* Also ensure the card itself doesn't have minimum width issues, though grid should handle this */
+@media (max-width: 500px) {
+  .cert-card {
+    /* Ensure padding doesn't push width too much */
+    padding: 1.5rem; 
+  }
+  .cert-info h3 {
+    font-size: 1.1rem;
+  }
 }
