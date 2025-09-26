@@ -935,7 +935,7 @@ textarea.form-control {
 /* Footer */
 footer {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 0.5rem; /* Reduced horizontal padding */
   background: var(--primary-light);
   margin-top: 4rem;
   position: relative;
@@ -1114,8 +1114,7 @@ footer::before {
   }
   
   .mobile-menu-btn {
-    display: block;
-    order: 1;
+    display: none;
   }
   
   .logo {
@@ -1170,7 +1169,8 @@ footer::before {
   }
 
   .copyright, .made-by {
-    font-size: 0.75rem; /* Ensure text shrinks so it doesn't overflow horizontally */
+    font-size: 0.65rem; /* Aggressive font size reduction */
+    white-space: nowrap; /* Prevents unnecessary line breaks if possible */
   }
 
 }
