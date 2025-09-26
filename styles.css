@@ -191,7 +191,7 @@ nav {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
 }
 
 .nav-links a::after {
@@ -1109,6 +1109,8 @@ footer::before {
   .nav-actions {
     order: 2;
     margin-left: auto;
+    /* ADD: Ensure buttons don't cling to the right edge */
+    margin-right: 0.5rem;
   }
   
   .mobile-menu-btn {
@@ -1160,6 +1162,15 @@ footer::before {
 
   .made-by {
     padding: 0 0.5rem; 
+  }
+
+  /* FIX: Ensure all footer content shrinks gracefully on small screens */
+  footer {
+    padding: 3rem 1rem; /* Adjust padding to match the main container */
+  }
+
+  .copyright, .made-by {
+    font-size: 0.75rem; /* Ensure text shrinks so it doesn't overflow horizontally */
   }
 
 }
