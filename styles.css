@@ -1157,6 +1157,11 @@ footer::before {
   h2 {
     font-size: 1.8rem;
   }
+
+  .made-by {
+    padding: 0 0.5rem; 
+  }
+
 }
 
 /* Animations */
