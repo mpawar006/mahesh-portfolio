@@ -148,27 +148,6 @@ const observer = new IntersectionObserver((entries, observer) => {
         });
       }
       
-      // Animate stat counters
-      if (entry.target.id === 'stats') {
-        const statNumbers = entry.target.querySelectorAll('.stat-number');
-        statNumbers.forEach(stat => {
-          const target = parseInt(stat.getAttribute('data-target'));
-          let count = 0;
-          const increment = target / 50;
-          
-          const updateCount = () => {
-            if (count < target) {
-              count += increment;
-              stat.textContent = Math.ceil(count);
-              setTimeout(updateCount, 30);
-            } else {
-              stat.textContent = target;
-            }
-          };
-          
-          updateCount();
-        });
-      }
       
       observer.unobserve(entry.target);
     }
