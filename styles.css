@@ -1060,10 +1060,43 @@ footer::before {
   }
   
   /* ... rest of the existing mobile rules ... */
-}
+
   
   .nav-links.active {
     display: flex;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+  /* * FIX FOR QUALIFICATION SECTION RESPONSIVENESS (MOBILE VIEW)
+   */
+  #qualification li {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem; /* Slightly reduce padding on the list item */
+  }
+  
+  #qualification li::before {
+    display: none; /* Hide the left border line in stacked view */
+  }
+
+  .edu-icon {
+    margin-bottom: 0.5rem; /* Add spacing below the icon */
+  }
+
+  .edu-info h3 {
+    font-size: 1.1rem; /* Adjust heading size */
+  }
+
+  .edu-info p {
+    font-size: 0.9rem; /* Adjust paragraph size */
   }
   
   .nav-actions {
@@ -1101,10 +1134,6 @@ footer::before {
   section {
     padding: 1.8rem;
     margin: 2rem auto;
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
   }
   
   .profile-photo {
