@@ -1114,7 +1114,8 @@ footer::before {
   }
   
   .mobile-menu-btn {
-    display: none;
+    display: block;
+    order: 1;
   }
   
   .logo {
