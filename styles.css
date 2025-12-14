@@ -302,15 +302,10 @@ header {
 }
 
 .profile-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid var(--secondary);
-  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
+  /* ...other properties... */
   object-fit: cover;
-  object-position: top;
+  object-position: top; /* Adjusts the vertical alignment of the image */
+  /* ...other properties... */
 }
 
 .profile-photo:hover {
