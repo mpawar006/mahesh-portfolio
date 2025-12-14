@@ -216,7 +216,7 @@ nav {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Increased gap between buttons */
+  gap: 1rem;
 }
 
 .resume-btn {
@@ -238,16 +238,20 @@ nav {
 }
 
 .hire-btn {
-  padding: 8px 16px;
+  padding: 0.6rem 1.2rem;
   background: #00bcd4;
-  color: #fff;
+  color: #fff !important; /* Ensure white text */
   border-radius: 6px;
   font-weight: 600;
   margin-left: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .hire-btn:hover {
   background: #0097a7;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
 }
 
 .theme-toggle-btn {
@@ -257,10 +261,10 @@ nav {
   font-size: 1.2rem;
   cursor: pointer;
   transition: color 0.3s ease;
-  padding: 0.5rem; /* Added padding for better click area */
-  border-radius: 50%; /* Added border radius for circular appearance */
-  width: 40px; /* Fixed width */
-  height: 40px; /* Fixed height */
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +272,7 @@ nav {
 
 .theme-toggle-btn:hover {
   color: var(--text);
-  background: rgba(100, 255, 218, 0.1); /* Added hover background */
+  background: rgba(100, 255, 218, 0.1);
 }
 
 /* Mobile menu button */
@@ -279,8 +283,8 @@ nav {
   color: var(--text);
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 0.5rem; /* Added padding for better click area */
-  border-radius: 8px; /* Added border radius */
+  padding: 0.5rem;
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
@@ -298,10 +302,15 @@ header {
 }
 
 .profile-photo {
-  /* ...other properties... */
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--secondary);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
   object-fit: cover;
-  object-position: top; /* Adjusts the vertical alignment of the image */
-  /* ...other properties... */
+  object-position: top;
 }
 
 .profile-photo:hover {
@@ -419,8 +428,8 @@ header h1 {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  text-decoration: none !important; /* Important to override any text-decoration */
-  border: none !important; /* Remove any borders that might look like underlines */
+  text-decoration: none !important;
+  border: none !important;
 }
 
 /* LinkedIn - Blue */
@@ -466,7 +475,6 @@ header h1 {
   height: 100%;
 }
 
-/* Remove any potential underlines from social icons */
 .social-links i {
   text-decoration: none !important;
   border: none !important;
@@ -538,6 +546,7 @@ h2::after {
   line-height: 1.8;
 }
 
+/* --- UPDATED FREELANCING SERVICES SECTION --- */
 #services {
   padding: 60px 20px;
   text-align: center;
@@ -551,15 +560,29 @@ h2::after {
 }
 
 .service-card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: var(--card-bg); /* Use theme variable */
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(100, 255, 218, 0.2);
 }
 
 .service-card h3 {
-  color: #00bcd4;
-  margin-bottom: 10px;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  color: var(--text-dim);
+  line-height: 1.6;
 }
 
 /* Qualification Section */
@@ -903,8 +926,8 @@ h2::after {
 }
 
 .cert-info {
-  flex-grow: 1; /* Allows the info block to take up the available space */
-  min-width: 0; /* Prevents long text (like the PG Cert name) from enforcing a minimum width and causing overflow/overlap */
+  flex-grow: 1;
+  min-width: 0;
 }
 
 /* Contact form */
@@ -971,7 +994,7 @@ textarea.form-control {
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem 0.5rem; /* Reduced horizontal padding */
+  padding: 2rem 0.5rem;
   background: var(--primary-light);
   margin-top: 4rem;
   position: relative;
@@ -1095,15 +1118,12 @@ footer::before {
   }
 
   .container {
-    padding: 0 1rem; /* Reduce padding from 2rem to 1rem (16px) on mobile */
+    padding: 0 1rem;
   }
 
   section {
-    padding: 1.5rem; /* Slightly reduce section padding on mobile */
+    padding: 1.5rem;
   }
-  
-  /* ... rest of the existing mobile rules ... */
-
   
   .nav-links.active {
     display: flex;
@@ -1114,38 +1134,35 @@ footer::before {
   }
 
   .certifications-grid {
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
+  }
 
-  /* * FIX FOR QUALIFICATION SECTION RESPONSIVENESS (MOBILE VIEW)
-   */
   #qualification li {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-    padding: 1rem; /* Slightly reduce padding on the list item */
+    padding: 1rem;
   }
   
   #qualification li::before {
-    display: none; /* Hide the left border line in stacked view */
+    display: none;
   }
 
   .edu-icon {
-    margin-bottom: 0.5rem; /* Add spacing below the icon */
+    margin-bottom: 0.5rem;
   }
 
   .edu-info h3 {
-    font-size: 1.1rem; /* Adjust heading size */
+    font-size: 1.1rem;
   }
 
   .edu-info p {
-    font-size: 0.9rem; /* Adjust paragraph size */
+    font-size: 0.9rem;
   }
   
   .nav-actions {
     order: 2;
     margin-left: auto;
-    /* ADD: Ensure buttons don't cling to the right edge */
     margin-right: 0.5rem;
   }
   
@@ -1200,16 +1217,14 @@ footer::before {
     padding: 0 0.5rem; 
   }
 
-  /* FIX: Ensure all footer content shrinks gracefully on small screens */
   footer {
-    padding: 3rem 1rem; /* Adjust padding to match the main container */
+    padding: 3rem 1rem;
   }
 
   .copyright, .made-by {
-    font-size: 0.65rem; /* Aggressive font size reduction */
-    white-space: nowrap; /* Prevents unnecessary line breaks if possible */
+    font-size: 0.65rem;
+    white-space: nowrap;
   }
-
 }
 
 /* Animations */
@@ -1222,7 +1237,7 @@ footer::before {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Fade-in animation for sections */
+/* Fade-in animation */
 section {
   opacity: 0;
   transform: translateY(20px);
