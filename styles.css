@@ -240,7 +240,7 @@ nav {
 .hire-btn {
   padding: 0.6rem 1.2rem;
   background: var(--gradient-3);
-  color: #fff !important; /* Ensure white text */
+  color: #101010;
   border-radius: 6px;
   font-weight: 600;
   margin-left: 15px;
