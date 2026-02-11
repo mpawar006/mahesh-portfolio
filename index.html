@@ -26,7 +26,7 @@
 
   <link rel="icon" type="image/png" href="https://www.mahesh-pawar.site/images/favicon.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -51,12 +51,13 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
+        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
       </div>
       
       <div class="nav-actions">
         <a href="Mahesh_Pawar_Resume.pdf" download class="resume-btn">
-          <i class="fas fa-download"></i> Resume
+          <i class="fas fa-download"></i> <span class="resume-text">Resume</span>
         </a>
         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
           <i class="fas fa-sun"></i>
@@ -98,6 +99,40 @@
     </div>
   </header>
   
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="stat-number" data-target="50">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div class="stat-number" data-target="3">0</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-number" data-target="5">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-number" data-target="30">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+    </div>
+  </section>
+  
   <div class="container">
     
     <section id="about">
@@ -112,23 +147,55 @@
       <div class="services-container">
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fab fa-aws"></i>
+          </div>
           <h3>AWS Cloud Architecture</h3>
           <p>Secure, scalable AWS infrastructure design with best practices.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Infrastructure Design</li>
+            <li><i class="fas fa-check"></i> Cost Optimization</li>
+            <li><i class="fas fa-check"></i> Security Implementation</li>
+          </ul>
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code-branch"></i>
+          </div>
           <h3>CI/CD Pipeline Setup</h3>
           <p>End-to-end CI/CD pipelines using Jenkins, GitHub Actions, and GitLab.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Automated Testing</li>
+            <li><i class="fas fa-check"></i> Deployment Automation</li>
+            <li><i class="fas fa-check"></i> GitOps Workflows</li>
+          </ul>
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fab fa-docker"></i>
+          </div>
           <h3>Docker & Kubernetes</h3>
           <p>Containerization and Kubernetes (EKS) deployment.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Container Orchestration</li>
+            <li><i class="fas fa-check"></i> Microservices Architecture</li>
+            <li><i class="fas fa-check"></i> Cluster Management</li>
+          </ul>
         </div>
 
         <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
           <h3>Infrastructure as Code</h3>
           <p>Terraform and CloudFormation automation.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> IaC Development</li>
+            <li><i class="fas fa-check"></i> State Management</li>
+            <li><i class="fas fa-check"></i> Multi-Cloud Deployments</li>
+          </ul>
         </div>
 
       </div>
@@ -185,10 +252,10 @@
         <div class="skill-category">
           <h3><i class="fas fa-code-branch"></i> CI/CD & DevOps</h3>
           <ul>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" class="skill-logo" alt="Jenkins"> Jenkins, GitHub Actions</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" class="skill-logo" alt="GitLab"> GitLab CI</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg" class="skill-logo" alt="ArgoCD"> ArgoCD, Flux</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circleci/circleci-plain.svg" class="skill-logo" alt="CircleCI"> CircleCI</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" class="skill-logo" alt="Jenkins"> Jenkins (Pipeline, Job DSL)</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="skill-logo" alt="GitHub Actions"> GitHub Actions</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" class="skill-logo" alt="GitLab"> GitLab CI/CD</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg" class="skill-logo" alt="ArgoCD"> ArgoCD (GitOps)</li>
           </ul>
           <div class="skill-bars">
             <div class="skill-bar">
@@ -213,30 +280,30 @@
         </div>
         
         <div class="skill-category">
-          <h3><i class="fas fa-box"></i> Containerization</h3>
+          <h3><i class="fas fa-cubes"></i> Containers & Orchestration</h3>
           <ul>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="skill-logo" alt="Docker"> Docker, Containerd</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="skill-logo" alt="Kubernetes"> Kubernetes (EKS, AKS)</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg" class="skill-logo" alt="Helm"> Helm, Kustomize</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rancher/rancher-original.svg" class="skill-logo" alt="Rancher"> Rancher, OpenShift</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="skill-logo" alt="Docker"> Docker & Docker Compose</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="skill-logo" alt="Kubernetes"> Kubernetes & EKS</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg" class="skill-logo" alt="Helm"> Helm Charts</li>
+            <li><i class="fas fa-project-diagram"></i> Service Mesh (Istio)</li>
           </ul>
           <div class="skill-bars">
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Docker</span>
-                <span>95%</span>
+                <span>92%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="95"></div>
+                <div class="skill-level" data-skill="92"></div>
               </div>
             </div>
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Kubernetes</span>
-                <span>90%</span>
+                <span>88%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="90"></div>
+                <div class="skill-level" data-skill="88"></div>
               </div>
             </div>
           </div>
@@ -245,40 +312,40 @@
         <div class="skill-category">
           <h3><i class="fas fa-server"></i> Infrastructure as Code</h3>
           <ul>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" class="skill-logo" alt="Terraform"> Terraform, CloudFormation</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" class="skill-logo" alt="Ansible"> Ansible, Puppet</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pulumi/pulumi-original.svg" class="skill-logo" alt="Pulumi"> Pulumi, Crossplane</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vagrant/vagrant-original.svg" class="skill-logo" alt="Vagrant"> Vagrant, Packer</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" class="skill-logo" alt="Terraform"> Terraform</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" class="skill-logo" alt="Ansible"> Ansible</li>
+            <li><i class="fab fa-aws"></i> AWS CloudFormation</li>
+            <li><i class="fas fa-file-code"></i> ARM Templates</li>
           </ul>
           <div class="skill-bars">
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Terraform</span>
-                <span>90%</span>
+                <span>87%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="90"></div>
+                <div class="skill-level" data-skill="87"></div>
               </div>
             </div>
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Ansible</span>
-                <span>85%</span>
+                <span>82%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="85"></div>
+                <div class="skill-level" data-skill="82"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="skill-category">
-          <h3><i class="fas fa-chart-line"></i> Monitoring & Logging</h3>
+          <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
           <ul>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" class="skill-logo" alt="Prometheus"> Prometheus, Grafana</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" class="skill-logo" alt="ELK"> ELK Stack</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/splunk/splunk-original.svg" class="skill-logo" alt="Splunk"> Splunk, Datadog</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/newrelic/newrelic-original.svg" class="skill-logo" alt="New Relic"> New Relic</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" class="skill-logo" alt="Prometheus"> Prometheus</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" class="skill-logo" alt="Grafana"> Grafana</li>
+            <li><i class="fas fa-search"></i> ELK Stack</li>
+            <li><i class="fas fa-eye"></i> AWS CloudWatch</li>
           </ul>
           <div class="skill-bars">
             <div class="skill-bar">
@@ -293,22 +360,22 @@
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Grafana</span>
-                <span>80%</span>
+                <span>83%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="80"></div>
+                <div class="skill-level" data-skill="83"></div>
               </div>
             </div>
           </div>
         </div>
         
         <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Scripting & Languages</h3>
+          <h3><i class="fas fa-code"></i> Programming & Scripting</h3>
           <ul>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="skill-logo" alt="Bash"> Bash, PowerShell</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-logo" alt="Python"> Python, Go</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg" class="skill-logo" alt="YAML"> YAML, JSON</li>
-            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="skill-logo" alt="Linux"> Linux Administration</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-logo" alt="Python"> Python</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" class="skill-logo" alt="Bash"> Bash/Shell Scripting</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-original.svg" class="skill-logo" alt="YAML"> YAML/JSON</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" class="skill-logo" alt="Go"> Go (Basics)</li>
           </ul>
           <div class="skill-bars">
             <div class="skill-bar">
@@ -323,10 +390,10 @@
             <div class="skill-bar">
               <div class="skill-name">
                 <span>Bash</span>
-                <span>90%</span>
+                <span>88%</span>
               </div>
               <div class="skill-progress">
-                <div class="skill-level" data-skill="90"></div>
+                <div class="skill-level" data-skill="88"></div>
               </div>
             </div>
           </div>
@@ -337,24 +404,26 @@
     <section id="projects">
       <h2>Featured Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        
+        <div class="project-card featured">
+          <div class="project-badge">Featured</div>
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DevOps Project">
+            <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AWS Infrastructure">
           </div>
           <div class="project-content">
-            <h3>Abode Software DevOps Lifecycle</h3>
-            <p>Implemented end-to-end CI/CD pipeline using Jenkins, Docker, and Kubernetes that reduced deployment times by 80%. Automated infrastructure provisioning with Terraform and configuration management with Ansible.</p>
+            <h3>Automated AWS Infrastructure Deployment</h3>
+            <p>Engineered complete AWS infrastructure automation using Terraform with modular VPC, multi-tier architecture, and auto-scaling. Implemented blue-green deployment strategy reducing downtime by 95%.</p>
             <div class="project-tags">
-              <span class="project-tag">Jenkins</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Kubernetes</span>
               <span class="project-tag">Terraform</span>
+              <span class="project-tag">AWS</span>
+              <span class="project-tag">Jenkins</span>
+              <span class="project-tag">Python</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/mpawar006/Project1-Adobe-DevOps-Lifecycle.git" target="_blank" class="project-link primary">
+              <a href="https://github.com/mpawar006/aws-terraform-infrastructure.git" target="_blank" class="project-link primary">
                 <i class="fab fa-github"></i> View Code
               </a>
-              <a href="#" class="project-link secondary">
+              <a href="https://awsterraform.mahesh-pawar.site" target="_blank" class="project-link secondary">
                 <i class="fas fa-external-link-alt"></i> Live Demo
               </a>
             </div>
@@ -444,6 +513,27 @@
             </div>
           </div>
         </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Monitoring Dashboard">
+          </div>
+          <div class="project-content">
+            <h3>Observability Stack Implementation</h3>
+            <p>Deployed comprehensive monitoring solution using Prometheus, Grafana, and ELK stack. Created custom dashboards and alerting rules that reduced MTTR by 60%.</p>
+            <div class="project-tags">
+              <span class="project-tag">Prometheus</span>
+              <span class="project-tag">Grafana</span>
+              <span class="project-tag">ELK</span>
+              <span class="project-tag">Alerting</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link secondary">
+                <i class="fas fa-book"></i> Case Study
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -459,6 +549,9 @@
             <h3>AWS Solutions Architect</h3>
             <p>Associate | Valid through 2025</p>
           </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+          </div>
         </div>
         
         <div class="cert-card">
@@ -468,6 +561,9 @@
           <div class="cert-info">
             <h3>Linux</h3>
             <p>Admin & Operations</p>
+          </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
           </div>
         </div>
         
@@ -479,7 +575,73 @@
             <h3>Executive PG Cert in Cloud & DevOps</h3>
             <p>iHUB IIT Roorkee</p>
           </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Latest Articles</h2>
+      <p class="section-description">Insights and tutorials on cloud architecture, DevOps practices, and emerging technologies</p>
+      <div class="blog-grid">
+        
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1667372393086-9d4001d51cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kubernetes Best Practices">
+            <div class="blog-category">Kubernetes</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Jan 15, 2025</span>
+              <span><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+            <h3>Kubernetes Security Best Practices for Production</h3>
+            <p>Learn essential security practices for hardening your Kubernetes clusters in production environments, including RBAC, network policies, and pod security standards.</p>
+            <a href="#" class="blog-link">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CI/CD Pipeline">
+            <div class="blog-category">DevOps</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Jan 8, 2025</span>
+              <span><i class="fas fa-clock"></i> 6 min read</span>
+            </div>
+            <h3>Building Resilient CI/CD Pipelines with GitOps</h3>
+            <p>Discover how to implement GitOps principles with ArgoCD and GitHub Actions to create self-healing, declarative deployment pipelines.</p>
+            <a href="#" class="blog-link">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AWS Cost Optimization">
+            <div class="blog-category">AWS</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="fas fa-calendar"></i> Dec 28, 2024</span>
+              <span><i class="fas fa-clock"></i> 10 min read</span>
+            </div>
+            <h3>AWS Cost Optimization: Strategies That Actually Work</h3>
+            <p>Practical strategies for reducing AWS costs without compromising performance, including right-sizing, spot instances, and reserved capacity planning.</p>
+            <a href="#" class="blog-link">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
 
       </div>
     </section>
@@ -488,14 +650,21 @@
       <h2>Get In Touch</h2>
       <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out!</p>
       <form action="https://formspree.io/f/xvgqqbwp" method="POST" class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" class="form-control" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
         </div>
         
         <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-control" required>
         </div>
         
         <div class="form-group">
