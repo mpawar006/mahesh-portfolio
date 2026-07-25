@@ -263,7 +263,7 @@ Edit CSS variables in `styles.css`:
 ## 📞 Support
 
 For issues or questions:
-- 📧 Email: support@mahesh-pawar.site
+- 📧 Email: support@mahesh-pawar.co.in
 - 🐛 Issues: https://github.com/mpawar006/mahesh-portfolio/issues
 - 💬 LinkedIn: https://linkedin.com/in/mpawar006
 
